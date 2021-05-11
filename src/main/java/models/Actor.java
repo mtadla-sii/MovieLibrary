@@ -1,6 +1,6 @@
 package models;
 
-public class Actor extends Person{
+public class Actor extends Person {
     public Actor() {
     }
 

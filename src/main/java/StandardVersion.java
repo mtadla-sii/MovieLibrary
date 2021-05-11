@@ -1,0 +1,36 @@
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import helpers.JsonHelper;
+import models.*;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
+
+public class StandardVersion {
+    public static void main(String[] args) throws IOException {
+        Library library = new Library(new ArrayList<>() {{
+            add(new Movie("The Shawshank Redemption",
+                    Genre.DRAMA,
+                    new Director("Frank", "Darabont"),
+                    new ArrayList<>() {{
+                        add(new Actor("Tim", "Robbins"));
+                        add(new Actor("Morgan", "Freeman"));
+                        add(new Actor("Bob", "Gunton"));
+                    }}));
+            add(new Movie("Seven",
+                    Genre.THRILLER,
+                    new Director("David", "Fincher"),
+                    new ArrayList<>() {{
+                        add(new Actor("Morgan", "Freeman"));
+                        add(new Actor("Brad", "Pitt"));
+                        add(new Actor("Gwyneth", "Paltrow"));
+                    }}));
+        }});
+
+        System.out.println(library);
+        new JsonHelper().serializeJson("target/exportedMovies.json", library);
+    }
+}
