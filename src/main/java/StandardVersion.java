@@ -1,10 +1,6 @@
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import helpers.JsonHelper;
 import models.*;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
