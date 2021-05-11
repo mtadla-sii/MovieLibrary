@@ -9,7 +9,8 @@ public class StandardVersion {
     public static void main(String[] args) throws IOException {
         // here you have example of creating library object using constructor
         Library library = new Library(new ArrayList<>() {{
-            add(new Movie("The Shawshank Redemption",
+            add(new Movie(
+                    "The Shawshank Redemption",
                     Genre.DRAMA,
                     new Director("Frank", "Darabont"),
                     new ArrayList<>() {{
@@ -17,7 +18,8 @@ public class StandardVersion {
                         add(new Actor("Morgan", "Freeman"));
                         add(new Actor("Bob", "Gunton"));
                     }}));
-            add(new Movie("Seven",
+            add(new Movie(
+                    "Seven",
                     Genre.THRILLER,
                     new Director("David", "Fincher"),
                     new ArrayList<>() {{
